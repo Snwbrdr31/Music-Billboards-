@@ -1,0 +1,17 @@
+<h1> Song </h1>
+
+<% if @billboard.songs.any? %>
+  <ul>
+     <% @billboard.songs.each do |song| %>
+       <li>Song title: <%= song.title %>
+           artist: <%= song.song_artist %>
+           length: <%= song.duration %>  </li>
+     <% end %>
+  </ul>
+ <% end %>
+
+<br />
+<br />
+<%= link_to 'Back', billboard_song_path %>
+<%= link_to 'Edit', edit_billboard_song_path(@billboard) %>
+<%= link_to 'Delete', billboard_path(@billboard), method: :delete, confirm: "Are you sure?" %>
